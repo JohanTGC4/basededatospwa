@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Altas - BaseDeDatos</title>
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+ <meta name="theme-color" content="#fffbfe">
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+ <link rel="manifest" crossorigin="use-credentials" href="site.webmanifest"/>
+
+ <script src="ungap/custom-elements.js"></script>
+
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_pestanas.css">
+ <script type="module" src="lib/js/submitForm.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+</head>
+
+<body>
+
+  <md-top-app-bar adicional="tab" headline="headline">
+
+    <h1>Agregar</h1>
+  
+   </md-top-app-bar>
+  
+   <h1 id="headline">Agregar</h1>
+  
+   <nav-tab-fixed id="tab"></nav-tab-fixed>
+
+   <main>
+    <form id="form" onsubmit="submitForm('srv/datasestudiante-agrega.php', event)
+    .then(modelo => location.href = 'index.html')
+    .catch(muestraError)">
+ 
+ 
+ 
+  
+ 
+  <p>
+   <label class="md-filled-text-field">
+    <input name="nombre" required placeholder="Nombre*">
+    <span>Nombre *</span>
+    <small>Obligatorio</small>
+   </label>
+   <label class="md-filled-text-field">
+    <input type="number"  name="edad" required placeholder="Edad*">
+    <span>Edad *</span>
+    <small>Obligatorio</small>
+   </label>
+   <label class="md-filled-text-field">
+    <input name="nacionalidad" required placeholder="Nacionalidad*">
+    <span>Nacionalidad *</span>
+    <small>Obligatorio</small>
+   </label>
+  </p>
+ 
+  <div style="display: flex; justify-content: space-around; width: 100%;">
+   <button class="md-filled-button" style="width: 40%; ">Agregar</button>
+   <button class="md-outline-button"  style="width: 40%;" onclick="window.location.href='index.html'">
+     Cancelar
+   </button>
+ </div>
+ </form>
+ 
+  <nav-drw></nav-drw>
+ </main>
+</body>
+
+</html>

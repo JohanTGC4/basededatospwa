@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Modificaciones - BaseDeDatos</title>
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+ <meta name="theme-color" content="#fffbfe">
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+ <link rel="manifest" crossorigin="use-credentials" href="site.webmanifest"/>
+ <script src="ungap/custom-elements.js"></script>
+
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_pestanas.css">
+ <script type="module" src="lib/js/consumeJson.js"></script>
+ <script type="module" src="lib/js/submitForm.js"></script>
+ <script type="module" src="lib/js/muestraObjeto.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+
+ <script>
+  // Obtiene los parámetros de la página.
+  const params = new URL(location.href).searchParams
+ </script>
+</head>
+
+<body onload="if (params.size > 0) {
+   consumeJson('srv/datasestudiante.php?' + params)
+    .then(respuesta => muestraObjeto(forma, respuesta.body))
+    .catch(muestraError)
+  }">
+
+  <md-top-app-bar adicional="tab" headline="headline">
+
+    <h1>Modificaciones</h1>
+  
+   </md-top-app-bar>
+  
+   <h1 id="headline">Modificaciones</h1>
+  
+   <nav-tab-fixed id="tab"></nav-tab-fixed>
+   <main>
+   <form id="forma" onsubmit="submitForm('srv/datasestudiante-modifica.php', event)
+   .then(respuesta => location.href = 'index.html')
+   .catch(muestraError)">
+
+<!-- 
+ <p><a href="index.html">Cancelar</a></p> -->
+
+ <input name="id" type="hidden">
+
+ <p>
+  <label class="md-filled-text-field">
+   <input name="nombre" value="Cargando&hellip;"required placeholder="Nombre*" >
+   <span>Nombre *</span>
+   <small>Obligatorio</small>
+  </label>
+  <label class="md-filled-text-field">
+    <input type="number" name="edad" value="Cargando&hellip;"required placeholder="Edad*" >
+    <span>Edad *</span>
+    <small>Obligatorio</small>
+   </label>
+   <label class="md-filled-text-field">
+    <input name="nacionalidad" value="Cargando&hellip;"required placeholder="Nacionalidad*" >
+    <span>Nacionalidad *</span>
+    <small>Obligatorio</small>
+   </label>
+ </p>
+
+ <!-- <p>
+  <label>
+   Nombre *
+   <input name="nombre" value="Cargando&hellip;">
+  </label>
+ </p> -->
+
+ <div style="display: flex; justify-content: space-around; width: 100%;">
+  <button type="submit" class="md-filled-button" style="width: 30%; ">Guardar</button>
+  <button type="button" class="md-outline-button"  style="width: 30%;" onclick="
+  if (params.size > 0 && confirm('Confirma la eliminación')) {
+   consumeJson('srv/datasestudiante-elimina.php?' + params)
+    .then(() => location.href = 'index.html')
+    .catch(muestraError)
+  }">
+ Eliminar
+  </button>
+  <button class="md-outline-button"  style="width: 30%;" onclick="window.location.href='index.html'">
+    Cancelar
+  </button>
+</div>
+
+ 
+
+</form>
+</main>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" class="light dark">
+
+<head>
+
+ <meta charset="UTF-8">
+ <title>Listado - BaseDeDatos</title>
+
+ <!-- Resumen para los motores de búsqueda. -->
+ <meta name="description" content="Ejemplo de PWA con Material Design">
+
+ <script src="js/registraServiceWorker.js"></script>
+
+ <meta name="viewport" content="width=device-width">
+
+ <!-- Color de la barra de navegación de Chrome en dispositivos móviles. -->
+ <meta name="theme-color" content="#fffbfe">
+
+ <!-- Ícono para la página web, que normalmente se pone en la raíz del sitio.
+  Puede ser diferente para cada página. -->
+ <link rel="icon" sizes="32x32" href="favicon.ico">
+
+ <!-- Configuración de la PWA para Chrome, Edge y Safari.
+  Debe ponerse en todas las páginas. -->
+  <link rel="manifest" crossorigin="use-credentials" href="site.webmanifest"/>
+
+ <!-- Permite a los navegadores, que como Safari no soportan el estándar
+  completo de custom elementsm, lo cumplan totalmente. Debe ponerse en todas
+  las páginas. -->
+ <script src="ungap/custom-elements.js"></script>
+
+ <!-- Configuración de todas las páginas con JavaSript. -->
+ <script type="module" src="js/configura.js"></script>
+ <link rel="stylesheet" href="css/estilos.css">
+ <link rel="stylesheet" href="css/transicion_pestanas.css">
+ <script type="module" src="lib/js/consumeJson.js"></script>
+ <script type="module" src="lib/js/muestraObjeto.js"></script>
+ <script type="module" src="lib/js/muestraError.js"></script>
+</head>
+
+<body onload="consumeJson('srv/datasestudiantes.php')
+   .then(respuesta => muestraObjeto(document, respuesta.body))
+   .catch(muestraError)">
+
+  <md-top-app-bar adicional="tab" headline="headline">
+
+    <h1>Lista</h1>
+  
+   </md-top-app-bar>
+  
+   <h1 id="headline">Lista</h1>
+  
+   <nav-tab-fixed id="tab"></nav-tab-fixed>
+
+   <!-- <p><a href="alta.html">Agregar</a></p> -->
+   <main>
+   <ul class="md-list" id="lista">
+      
+    <li><progress max="100">Cargando&hellip;</progress></li>
+    
+   </ul>
+</main> 
+ </body>
+  
+  </html>

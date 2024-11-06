@@ -1,0 +1,7 @@
+<?php
+
+const DATOSESTUDIANTE = "DATOSESTUDIANTE";
+const DE_ID = "DE_ID";
+const DE_NOMBRE = "DE_NOMBRE";
+const DE_EDAD = "DE_EDAD";
+const DE_NACIONALIDAD = "DE_NACIONALIDAD";
