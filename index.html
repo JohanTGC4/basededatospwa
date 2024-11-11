@@ -43,12 +43,28 @@
    .catch(muestraError)">
 
   <md-top-app-bar adicional="tab" headline="headline">
+   <!-- <button class="md-standard-icon-button"    type="button" slot="navigation" title="Atrás">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    
 
-    <h1>Lista</h1>
   
+
+    
+   <button type="button" class="md-standard-icon-button" title="Guardar" slot="action">
+      <span class="material-symbols-outlined">save</span>
+    </button>
+    
+
+    <button type="button" class="md-standard-icon-button" title="Cerrar" slot="action">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+     -->
+    <h1>Lista de Estudiantes</h1>
+ 
    </md-top-app-bar>
   
-   <h1 id="headline">Lista</h1>
+   <h1 id="headline">Lista de Estudiantes</h1>
   
    <nav-tab-fixed id="tab"></nav-tab-fixed>
 
@@ -59,7 +75,13 @@
     <li><progress max="100">Cargando&hellip;</progress></li>
     
    </ul>
-</main> 
+</main>
+<button type="button" class="md-fab-primary"
+        style="position: fixed; bottom: 1rem; right: 1rem;"
+        onclick="window.location.href='alta.html'">
+    <span class="material-symbols-outlined">add</span>
+</button>
+
  </body>
   
   </html>

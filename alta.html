@@ -20,12 +20,52 @@
  <link rel="stylesheet" href="css/transicion_pestanas.css">
  <script type="module" src="lib/js/submitForm.js"></script>
  <script type="module" src="lib/js/muestraError.js"></script>
+
+
+
+ <script type="module" src="lib/js/consumeJson.js"></script>
+ <script type="module" src="lib/js/muestraObjeto.js"></script>
+
 </head>
 
 <body>
 
   <md-top-app-bar adicional="tab" headline="headline">
+    <button class="md-standard-icon-button"    type="button" slot="navigation" title="Atrás">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    
 
+   <!-- <button type="button" class="md-standard-icon-button" title="Atrás" slot="action">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button> -->
+
+    
+    <button type="button" class="md-standard-icon-button" title="Guardar" slot="action"
+      onclick="submitForm('srv/datasestudiante-agrega.php', event)
+        .then(modelo => location.href = 'index.html')
+        .catch(muestraError)">
+      <span class="material-symbols-outlined">save</span>
+    </button>
+   
+
+    <button type="button" class="md-standard-icon-button" title="Eliminar"  
+    onclick="if (params.size > 0 && confirm('Confirma la eliminación')) {
+      consumeJson('srv/datasestudiante-elimina.php?' + params)
+      .then(() => location.href = 'index.html')
+      .catch(muestraError)
+    }">
+    <span class="material-symbols-outlined">delete</span>
+  </button>
+  
+    <button type="button" class="md-standard-icon-button" title="Cerrar" slot="action" onclick="if (params.size > 0 && confirm('Confirma la eliminación')) {
+      consumeJson('srv/datasestudiante-elimina.php?' + params)
+      .then(() => location.href = 'index.html')
+      .catch(muestraError)
+    }">
+      <span class="material-symbols-outlined">delete</span>
+    </button>
+    
     <h1>Agregar</h1>
   
    </md-top-app-bar>
@@ -62,10 +102,10 @@
   </p>
  
   <div style="display: flex; justify-content: space-around; width: 100%;">
-   <button class="md-filled-button" style="width: 40%; ">Agregar</button>
+   <!-- <button class="md-filled-button" style="width: 40%; ">Agregar</button>
    <button class="md-outline-button"  style="width: 40%;" onclick="window.location.href='index.html'">
      Cancelar
-   </button>
+   </button> -->
  </div>
  </form>
  

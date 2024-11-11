@@ -7,19 +7,11 @@ export class NavTabFixed extends HTMLElement {
 
   this.innerHTML = /* HTML */`
    <a ${resaltaSiEstasEn(["/index.html", "", "/"])} href="index.html">
-    <span class="material-symbols-outlined">pin_drop</span>
+    <span class="material-symbols-outlined">format_list_bulleted</span>
     Listado
    </a>
 
-   <a ${resaltaSiEstasEn(["/alta.html"])} href="alta.html">
-    <span class="material-symbols-outlined">upload_file</span>
-    Altas
-   </a>
 
-   <a ${resaltaSiEstasEn(["/modificaciones.html"])} href="modificaciones.html">
-    <span class="material-symbols-outlined">camera</span>
-    Modificaciones
-   </a>
    
 
    <a ${resaltaSiEstasEn(["/ayuda.html"])} href="ayuda.html">
@@ -31,3 +23,13 @@ export class NavTabFixed extends HTMLElement {
 }
 
 customElements.define("nav-tab-fixed", NavTabFixed)
+
+  //  <a ${resaltaSiEstasEn(["/alta.html"])} href="alta.html">
+  //   <span class="material-symbols-outlined">upload_file</span>
+  //   Altas
+  //  </a>
+
+  //  <a ${resaltaSiEstasEn(["/modificaciones.html"])} href="modificaciones.html">
+  //   <span class="material-symbols-outlined">system_update_alt</span>
+  //   Modificaciones
+  //  </a>

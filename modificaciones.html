@@ -36,6 +36,17 @@
 
   <md-top-app-bar adicional="tab" headline="headline">
 
+
+
+    <button type="button" class="md-standard-icon-button" title="Eliminar"  
+    onclick="if (params.size > 0 && confirm('Confirma la eliminación')) {
+      consumeJson('srv/datasestudiante-elimina.php?' + params)
+      .then(() => location.href = 'index.html')
+      .catch(muestraError)
+    }">
+    <span class="material-symbols-outlined">delete</span>
+  </button>
+
     <h1>Modificaciones</h1>
   
    </md-top-app-bar>
@@ -47,7 +58,12 @@
    <form id="forma" onsubmit="submitForm('srv/datasestudiante-modifica.php', event)
    .then(respuesta => location.href = 'index.html')
    .catch(muestraError)">
-
+ <!-- <button type="button" class="md-standard-icon-button" title="Guardar" slot="action"
+  onclick="submitForm('srv/datasestudiante-modifica.php', document.getElementById('forma'))
+    .then(modelo => location.href = 'index.html')
+    .catch(muestraError)">
+  <span class="material-symbols-outlined">save</span>
+</button> -->
 <!-- 
  <p><a href="index.html">Cancelar</a></p> -->
 
@@ -88,6 +104,7 @@
   }">
  Eliminar
   </button>
+  
   <button class="md-outline-button"  style="width: 30%;" onclick="window.location.href='index.html'">
     Cancelar
   </button>

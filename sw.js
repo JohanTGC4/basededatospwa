@@ -15,7 +15,7 @@
  * conoce como número menor y se cambia cuando se realizan
  * modificaciones menores.
  */
-const VERSION = "3.90"
+const VERSION = "13.90"
 
 /**
  * Nombre de la carpeta de caché.
@@ -80,12 +80,15 @@ const ARCHIVOS = [
  "lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf",
  "lib/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2",
  "lib/fonts/roboto-v32-latin-regular.woff2",
+
  "lib/js/abreElementoHtml.js",
  "lib/js/cierraElementoHtmo.js",
+ "lib/js/consumeJson.js",
  "lib/js/exportaAHtml.js",
  "lib/js/getAttribute.js",
  "lib/js/htmlentities.js",
  "lib/js/muestraError.js",
+ "lib/js/muestraObjeto.js",
  "lib/js/muestraTextoDeAyuda.js",
  "lib/js/ProblemDetails.js",
  "lib/js/querySelector.js",
@@ -99,42 +102,6 @@ const ARCHIVOS = [
  "lib/js/custom/md-slider-field.js",
  "lib/js/custom/md-top-app-bar.js",
  "lib/js/custom/MdNavigationDrawer.js",
-
- 'lib/php/BAD_REQUEST.php',
-'lib/php/calculaArregloDeParametros.php',
-'lib/php/calculaSqlDeAsignaciones.php',
-'lib/php/calculaSqlDeCamposDelInsert.php',
-'lib/php/calculaSqlDeValues.php',
-'lib/php/delete.php',
-'lib/php/devuelveCreated.php',
-'lib/php/devuelveErrorInterno.php',
-'lib/php/devuelveJson.php',
-'lib/php/devuelveNoContent.php',
-'lib/php/devuelveProblemDetails.php',
-'lib/php/devuelveResultadoNoJson.php',
-'lib/php/ejecutaServicio.php',
-'lib/php/fetch.php',
-'lib/php/fetchAll.php',
-'lib/php/insert.php',
-'lib/php/INTERNAL_SERVER_ERROR.php',
-'lib/php/NOT_FOUND.php',
-'lib/php/ProblemDetails.php',
-'lib/php/recuperaEntero.php',
-'lib/php/recuperaIdEntero.php',
-'lib/php/recuperaTexto.php',
-'lib/php/select.php',
-'lib/php/selectFirst.php',
-'lib/php/update.php',
-'lib/php/validaNombre.php',
-
-
-'srv/Bd.php',
-'srv/datosestudiante-agrega.php',
-'srv/datosestudiante-elimina.php',
-'srv/datosestudiante-modifica.php',
-'srv/datosestudiante.php',
-'srv/datosestudiantes.php',
-'srv/TABLA_DATOSESTUDIANTE.php',
 
 
  "material-tokens/css/baseline.css",
